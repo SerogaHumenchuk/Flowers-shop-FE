@@ -88,7 +88,7 @@ export const roses = [
   {
     img: Tornado,
     name: 'name',
-    type: 'Чайно гібридні',
+    type: 'Дрібноквіткові',
     price: 45,
   },
   {
@@ -370,7 +370,7 @@ export const roses = [
   {
     img: Alegria,
     name: 'name',
-    type: 'Плетисті',
+    type: 'Дрібноквіткові',
     price: 35,
   },
   {

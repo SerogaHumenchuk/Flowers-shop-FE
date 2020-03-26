@@ -42,4 +42,16 @@ export const menu = {
     children: [],
     text: 'Віола (Анютки)',
   },
+  9: {
+    nodeId: 9,
+    parent: 0,
+    children: [],
+    text: 'Пеларгонія',
+  },
+  10: {
+    nodeId: 10,
+    parent: 0,
+    children: [],
+    text: 'Кальцеолярія',
+  },
 };

@@ -1,9 +1,9 @@
 import { catalogActionTypes } from '../ActionTypes';
-import { menu } from './configs/menu';
+import { menu } from '../../../configs/menu';
 
 const initialMenu = {
   all: { ...menu },
-  heads: [1, 7, 8],
+  heads: [1, 7, 8, 9, 10],
 };
 
 export const menuReducer = (state = initialMenu, { type, payload }) => {
