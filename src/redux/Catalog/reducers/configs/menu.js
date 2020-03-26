@@ -2,7 +2,7 @@ export const menu = {
   1: {
     nodeId: 1,
     parent: 0,
-    children: [2, 3, 4, 5, 6],
+    children: [2, 3, 4, 6],
     text: 'Троянди',
     collapsed: true,
   },
@@ -24,12 +24,6 @@ export const menu = {
     children: [],
     text: 'Плетисті',
   },
-  5: {
-    nodeId: 5,
-    parent: 1,
-    children: [],
-    text: 'Штамбові',
-  },
   6: {
     nodeId: 6,
     parent: 1,
@@ -46,6 +40,6 @@ export const menu = {
     nodeId: 8,
     parent: 0,
     children: [],
-    text: 'Віола (Анютині очі)',
+    text: 'Віола (Анютки)',
   },
 };

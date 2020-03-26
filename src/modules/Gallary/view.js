@@ -26,13 +26,13 @@ export const View = ({ filtered, classes }) => {
       })}
     </GridList>
     <Dialog fullScreen open={isOpen} onClose={() => toggleDrawer({isOpen: false})}>
-    <AppBar color="primary" className={classes.header}>
+      <AppBar color="primary" className={classes.header}>
         <IconButton edge="start" color="inherit" onClick={() => toggleDrawer({isOpen: false})} aria-label="close" className={classes.closeBtn}>
           <CloseIcon className={classes.closeDialogIcon}/>
         </IconButton>
       </AppBar>
-      <div className={classes.dialogContent} style={{ backgroundImage: `url(${dialogImage})`}} > 
-
+      <div className={classes.imageContainer}>
+        <img className={classes.dialogImage} src={dialogImage} alt="big pictue"/>
       </div>
   </Dialog>
   </>

@@ -5,35 +5,37 @@ export const styles = createStyles({
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     margin: 'auto',
-    width: '90%',
+    width: '100%',
   },
   item: {
-    width: 300,
-    height: 380,
+    width: '100%',
+    maxWidth: 340,
+    // height: 380,
   },
   card: {
     width: '100%',
-    height: '100%',
+    // height: '100%',
   },
   img: {
     display: 'block',
-    height: 290,
+    height: 'auto',
+    maxHeight: '290',
     width: '100%',
   },
-  description: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    padding: '10px 15px',
-  },
-  name: {
-    fontWeight: 'bold',
-    marginBottom: 10,
-  },
-  price: {
-    fontWeight: 'bold',
-  },
+  // description: {
+  //   display: 'flex',
+  //   flexDirection: 'column',
+  //   justifyContent: 'space-around',
+  //   alignItems: 'center',
+  //   padding: '10px 15px',
+  // },
+  // name: {
+  //   fontWeight: 'bold',
+  //   marginBottom: 10,
+  // },
+  // price: {
+  //   fontWeight: 'bold',
+  // },
 });

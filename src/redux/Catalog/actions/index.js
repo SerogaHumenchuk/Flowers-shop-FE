@@ -39,28 +39,28 @@ export const updateFilteredListOfGoods = node => (dispatch, getState) => {
   dispatch(generalActions.toggleDrawer(false));
 
   let filteredListOfGoods = [];
+  console.log(node)
   switch (node.text) {
     case 'Чайно гібридні':
+      console.log('Чайно гібридні')
       dispatch(generalActions.updateTitle('Чайно гібридні троянди'));
       dispatch(generalActions.updateGridType('cards'));
       filteredListOfGoods = [...roses].filter(el => el.type === node.text);
       break;
-    case 'Штамбові':
-      dispatch(generalActions.updateTitle('Штамбові троянди'));
-      dispatch(generalActions.updateGridType('cards'));
-      filteredListOfGoods = [...roses].filter(el => el.type === node.text);
-      break;
     case 'Дрібноквіткові':
+      console.log('Дрібноквіткові')
       dispatch(generalActions.updateTitle('Дрібноквіткові троянди'));
       dispatch(generalActions.updateGridType('cards'));
       filteredListOfGoods = [...roses].filter(el => el.type === node.text);
       break;
     case 'Плетисті':
+      console.log('Плетисті')
       dispatch(generalActions.updateTitle('Плетисті троянди'));
       dispatch(generalActions.updateGridType('cards'));
       filteredListOfGoods = [...roses].filter(el => el.type === node.text);
       break;
     case 'Всі':
+      console.log('Всі')
       dispatch(generalActions.updateTitle('Троянди'));
       dispatch(generalActions.updateGridType('cards'));
       filteredListOfGoods = [...roses];
@@ -70,8 +70,8 @@ export const updateFilteredListOfGoods = node => (dispatch, getState) => {
       dispatch(generalActions.updateGridType('gallery'));
       filteredListOfGoods = [...margos];
       break;
-    case 'Віола (Анютині очі)':
-      dispatch(generalActions.updateTitle('Віола (Анютині очі)'));
+    case 'Віола (Анютки)':
+      dispatch(generalActions.updateTitle('Віола (Анютки)'));
       dispatch(generalActions.updateGridType('gallery'));
       filteredListOfGoods = [...viola];
       break;

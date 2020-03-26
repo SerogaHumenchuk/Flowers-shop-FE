@@ -12,12 +12,12 @@ import margo11 from './margo11.jpg';
 
 export const margoImages = [
   margo1,
-  margo2,
+  margo10,
   margo6,
+  margo2,
   margo3,
   margo4,
-  margo5,
-  margo10,
-  margo11,
   margo8,
+  margo11,
+  margo5,
 ];

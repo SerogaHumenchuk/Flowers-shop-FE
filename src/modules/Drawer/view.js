@@ -22,6 +22,7 @@ export const View = ({
   menu,
   updateTitle,
   history,
+  title,
   classes,
 }) => {
   const hendleredirectToContacts = () => {
@@ -32,7 +33,7 @@ export const View = ({
 
   const handleUpdateFilteredListOfGoods = node => () => {
     updateFilteredListOfGoods(node);
-    history.push('/catalog');
+    history.push(`/catalog/${title}`);
   };
 
   return (

@@ -4,9 +4,11 @@ export const selector = createSelector(
   ({ catalog }) => catalog.menu,
   ({ catalog }) => catalog.listOfGoods,
   ({ general }) => general.isOpenDrawer,
-  (menu, listOfGoods, isOpenDrawer) => ({
+  ({ general }) => general.title,
+  (menu, listOfGoods, isOpenDrawer, title) => ({
     menu,
     listOfGoods,
     isOpenDrawer,
+    title,
   }),
 );

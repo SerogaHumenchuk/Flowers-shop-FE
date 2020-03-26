@@ -2,7 +2,7 @@ import { generalActionTypes } from '../actionTypes';
 
 const initialState = {
   gridType: 'cards', // cards, gallery
-  title: 'Рослини',
+  title: 'Троянди',
   isOpenDrawer: true,
 };
 
