@@ -248,12 +248,6 @@ export const roses = [
     price: 35,
   },
   {
-    img: LadyRomantika,
-    name: 'name',
-    type: 'Дрібноквіткові',
-    price: 35,
-  },
-  {
     img: Malibu,
     name: 'name',
     type: 'Чайно гібридні',

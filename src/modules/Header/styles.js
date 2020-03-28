@@ -2,7 +2,7 @@ import { createStyles } from '@material-ui/core';
 
 export const styles = createStyles({
   headerContainer: {
-    height: 80,
+    height: 56,
   },
   catalogBtn: {
     backgroundColor: '#eee',
@@ -18,5 +18,9 @@ export const styles = createStyles({
   },
   btnIcon: {
     transform: 'scale(0.8)',
+  },
+  title: {
+    fontSize: '2.5vh',
+    lineHeight: 1
   }
 });

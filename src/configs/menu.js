@@ -58,6 +58,6 @@ export const menu = {
     nodeId: 11,
     parent: 0,
     children: [],
-    text: 'Інші рослини',
+    text: 'Смородина',
   },
 };
