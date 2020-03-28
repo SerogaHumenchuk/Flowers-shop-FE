@@ -56,7 +56,7 @@ export const View = ({ classes }) => {
           </TableCell>
         </TableRow>
         <TableRow>
-          <TableCell className={classes.td} className={classes.td} colSpan={2}>
+          <TableCell className={classes.td} colSpan={2}>
             <a
               href="https://www.facebook.com/100026793572185"
               target="_blank"
@@ -78,7 +78,7 @@ export const View = ({ classes }) => {
           </TableCell>
         </TableRow>
         <TableRow>
-          <TableCell className={classes.td} className={classes.td} colSpan={2}>
+          <TableCell className={classes.td} colSpan={2}>
             <a
               href="https://www.instagram.com/flowersmamka/"
               target="_blank"
@@ -97,6 +97,17 @@ export const View = ({ classes }) => {
             >
               <img className={classes.icon} src={InstaIcon} alt="phone" />
             </a>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell className={classes.td} colSpan={1}>
+            Наша адреса:
+          </TableCell>
+          <TableCell className={classes.td} colSpan={2}>
+             <Typography className={classes.mail} color="primary">Вінницька обл.</Typography>
+            <Typography className={classes.mail} color="primary">Калинівський р-н.</Typography>
+            <Typography className={classes.mail} color="primary">c. Павлівка</Typography>
+            <Typography className={classes.mail} color="primary">вул. Коцюбинського, 18</Typography>
           </TableCell>
         </TableRow>
       </TableBody>
