@@ -22,7 +22,7 @@ export const View = ({
   menu,
   updateTitle,
   history,
-  title,
+  title: {title},
   classes,
 }) => {
   const hendleredirectToContacts = () => {
@@ -33,6 +33,9 @@ export const View = ({
 
   const handleUpdateFilteredListOfGoods = node => () => {
     updateFilteredListOfGoods(node);
+    if(title === 'Інші рослини') {
+      history.push(`/catalog/other`);
+    }
     history.push(`/catalog/${title}`);
   };
 

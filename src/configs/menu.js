@@ -54,4 +54,10 @@ export const menu = {
     children: [],
     text: 'Кальцеолярія',
   },
+  11: {
+    nodeId: 11,
+    parent: 0,
+    children: [],
+    text: 'Інші рослини',
+  },
 };

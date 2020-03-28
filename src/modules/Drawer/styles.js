@@ -18,7 +18,7 @@ export const styles = createStyles({
   },
   closeDrawerTitle: {
     color: '#3f51b5',
-    fonstSize: 16,
+    fonstSize: 18,
     fontWeight: 800,
   },
   item: {
@@ -26,7 +26,7 @@ export const styles = createStyles({
     cursor: 'pointer',
   },
   subItem: {
-    padding: '4px 8px',
+    padding: '6px 8px',
   },
   closeDrawerIcon: {
     color: '#3f51b5',

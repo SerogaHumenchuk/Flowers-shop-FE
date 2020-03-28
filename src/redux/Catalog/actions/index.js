@@ -41,47 +41,52 @@ export const updateFilteredListOfGoods = node => (dispatch, getState) => {
   let filteredListOfGoods = [];
   switch (node.text) {
     case 'Чайно гібридні':
-      dispatch(generalActions.updateTitle('Чайно гібридні троянди'));
+      dispatch(generalActions.updateTitle({title: 'Чайно гібридні троянди', price: '35 грн'}));
       dispatch(generalActions.updateGridType('cards'));
       filteredListOfGoods = [...roses].filter(el => el.type === node.text);
       break;
     case 'Дрібноквіткові':
-      dispatch(generalActions.updateTitle('Дрібноквіткові троянди'));
+      dispatch(generalActions.updateTitle({title: 'Дрібноквіткові троянди', price: '35 грн'}));
       dispatch(generalActions.updateGridType('cards'));
       filteredListOfGoods = [...roses].filter(el => el.type === node.text);
       break;
     case 'Плетисті':
-      dispatch(generalActions.updateTitle('Плетисті троянди'));
+      dispatch(generalActions.updateTitle({title: 'Плетисті троянди', price: '40 грн'}));
       dispatch(generalActions.updateGridType('cards'));
       filteredListOfGoods = [...roses].filter(el => el.type === node.text);
       break;
     case 'Всі':
-      dispatch(generalActions.updateTitle('Троянди'));
+      dispatch(generalActions.updateTitle({title: 'Троянди', price: '35-40 грн'}));
       dispatch(generalActions.updateGridType('cards'));
       filteredListOfGoods = [...roses];
       break;
     case 'Маргаритки':
-      dispatch(generalActions.updateTitle('Маргаритки'));
+      dispatch(generalActions.updateTitle({title: 'Маргаритки', price: '15 грн'}));
       dispatch(generalActions.updateGridType('gallery'));
       filteredListOfGoods = [...margos];
       break;
     case 'Віола (Анютки)':
-      dispatch(generalActions.updateTitle('Віола (Анютки)'));
+      dispatch(generalActions.updateTitle({title: 'Віола (Анютки)', price:  '15 грн'}));
       dispatch(generalActions.updateGridType('gallery'));
       filteredListOfGoods = [...viola];
       break;
     case 'Пеларгонія':
-      dispatch(generalActions.updateTitle('Пеларгонія'));
+      dispatch(generalActions.updateTitle({title: 'Пеларгонія', price: '70-120 грн'}));
       dispatch(generalActions.updateGridType('gallery'));
       filteredListOfGoods = [...pelargonia];
       break;
     case 'Кальцеолярія':
-      dispatch(generalActions.updateTitle('Кальцеолярія'));
+      dispatch(generalActions.updateTitle({title: 'Кальцеолярія', price: '25 грн'}));
       dispatch(generalActions.updateGridType('gallery'));
       filteredListOfGoods = [...kaltselyaria];
      break;
+     case 'Інші рослини':
+      dispatch(generalActions.updateTitle({title: 'Інші рослини', price: ''}));
+      dispatch(generalActions.updateGridType('gallery'));
+      filteredListOfGoods = [];
+     break;
     default:
-      dispatch(generalActions.updateTitle('Квіти'));
+      dispatch(generalActions.updateTitle({title: 'Квіти', price: ''}));
       filteredListOfGoods = [...roses];
   }
   return dispatch(updateFilteredListOfGoodsActionCreator(filteredListOfGoods));
