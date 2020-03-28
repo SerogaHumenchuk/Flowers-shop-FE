@@ -1,6 +1,9 @@
 import { createStyles } from '@material-ui/core';
 
 export const styles = createStyles({
+  item: {
+    minHeight: '30vw',
+  },
   closeBtn: {
     margin: '0 0 0 auto'
   },

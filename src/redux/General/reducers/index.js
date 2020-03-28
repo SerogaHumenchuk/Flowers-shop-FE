@@ -2,7 +2,7 @@ import { generalActionTypes } from '../actionTypes';
 
 const initialState = {
   gridType: 'cards', // cards, gallery
-  title: 'Троянди',
+  title: {title: 'Троянди', price: '35-40 грн'},
   isOpenDrawer: true,
 };
 

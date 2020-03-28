@@ -1,17 +1,17 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import { GridList, GridListTile, Dialog, IconButton, AppBar } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
 
 export const View = ({ filtered, classes }) => {
 
   const [isOpen, setIsOpen] = useState(false);
-  const [dialogImage, setDialogImage] = useState('')
 
   const toggleDrawer = ({isOpen, img = ''}) => {
-    setIsOpen(isOpen)
-    setDialogImage(img)
+    setIsOpen(isOpen);
+    setDialogImage(img);
   }
 
+  const [dialogImage, setDialogImage] = useState('')
   let cols = 0;
   return (
     <>
@@ -19,9 +19,9 @@ export const View = ({ filtered, classes }) => {
       {filtered.map(img => {
         cols++;
         return (
-          <GridListTile key={img} cols={cols % 3 === 0 ? 2 : 1} onClick={() => toggleDrawer({isOpen: true, img})}>
-            <img src={img} alt={`flower`} />
-          </GridListTile>
+            <GridListTile key={img} cols={cols % 3 === 0 ? 2 : 1} onClick={() => toggleDrawer({isOpen: true, img})} className={classes.item}>
+              <img src={img} alt={`flower`} />
+            </GridListTile>
         );
       })}
     </GridList>
