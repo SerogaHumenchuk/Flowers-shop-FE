@@ -25,13 +25,9 @@ export const View = ({ toggleDrawer, isOpen, title: {price, title}, classes }) =
         >
           <MenuIcon />
         </IconButton> */}
-          
-        </Grid>
+        <Typography className={classes.title}>{title}</Typography>
+      </Grid>
       </Toolbar>
-      <Grid container justify='space-around' alignItems='center'> 
-            <Typography>{title}</Typography>
-            <Typography>{price}</Typography>
-          </Grid>
     </AppBar>
   </div>
 );

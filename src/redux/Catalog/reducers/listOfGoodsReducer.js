@@ -5,6 +5,8 @@ import { margoImages } from '../../../configs/listOfGoods/margaritka/images';
 import { vioalImages } from '../../../configs/listOfGoods/viola/images';
 import { pelargonia } from '../../../configs/listOfGoods/pelargonia/images';
 import { kaltselyaria } from '../../../configs/listOfGoods/kaltselyaria/images'
+import { currants } from '../../../configs/listOfGoods/currants/images'
+
 
 const initiaListOfGoods = {
   roses: [...roses],
@@ -12,6 +14,7 @@ const initiaListOfGoods = {
   viola: [...vioalImages],
   pelargonia: [...pelargonia],
   kaltselyaria: [...kaltselyaria],
+  currants: [...currants],
   filtered: [...roses],
 };
 
