@@ -121,7 +121,7 @@ export const View = ({ classes }) => {
             </TableCell>
             <TableCell className={classes.td} colSpan={2}>
               <Typography className={classes.mail} color="primary">Самовивіз</Typography>
-              <Typography className={classes.mail} color="primary">Новою Поштою</Typography>
+              <Typography className={classes.mail} color="primary">Новою Поштою (замовлення від 500грн)</Typography>
             </TableCell>
           </TableRow>
         </TableBody>
