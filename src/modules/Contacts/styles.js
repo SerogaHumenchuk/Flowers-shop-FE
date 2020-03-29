@@ -1,10 +1,9 @@
 import { createStyles } from '@material-ui/core';
 
 export const styles = createStyles({
-  // table: {
-  //   margin: 'auto',
-  //   width: 300,
-  // },
+  table: {
+    marginBottom: 60
+  },
   td: {
     padding: '1vw',
   },
