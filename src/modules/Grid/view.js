@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Gallery } from '../Gallary';
 import { GridCards } from '../GridCards';
 import { Table, TableRow, TableCell } from '@material-ui/core';
 
-export const View = ({ gridType, prices, classes }) => {
+export const View = ({ updateFilteredListOfGoods, gridType, prices, history: { location: { pathname } }, classes }) => {
+
+  useEffect(() => {
+    const regex = /(?<=catalog\/).+/;
+    const plant = pathname.match(regex);
+
+    plant && updateFilteredListOfGoods(null, plant[0])
+  }, []);
+
   return (
     <div>
       <Table className={classes.table}>

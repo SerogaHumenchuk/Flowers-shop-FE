@@ -2,8 +2,8 @@ import React from 'react';
 import { AppBar, Toolbar, Typography, Grid, Button } from '@material-ui/core';
 import KeyboardArrowLeftIcon from '@material-ui/icons/KeyboardArrowLeft';
 
-import MenuIcon from '@material-ui/icons/Menu';
-import IconButton from '@material-ui/core/IconButton';
+// import MenuIcon from '@material-ui/icons/Menu';
+// import IconButton from '@material-ui/core/IconButton';
 
 export const View = ({ toggleDrawer, isOpen, title: {price, title}, classes }) => (
   <div className={classes.headerContainer}>

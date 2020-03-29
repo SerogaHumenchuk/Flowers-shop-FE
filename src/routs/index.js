@@ -7,7 +7,7 @@ export const Routs = () => {
   return (
     <Switch>
       <Route path="/contacts" component={Contacts} />
-      <Route path="/catalog" component={Grid} />
+      <Route path="/catalog/:id" component={Grid} />
       <Route path="/" component={Grid} />
     </Switch>
   );

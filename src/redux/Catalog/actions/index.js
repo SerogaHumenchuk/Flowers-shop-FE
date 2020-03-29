@@ -1,5 +1,8 @@
 import { catalogActionTypes } from '../ActionTypes';
 import * as generalActions from '../../General/actions';
+import { listOfGoodsConstants } from '../../../constants/listOfGoods';
+
+const { ROSES, CALCEOLARIA, CURRANT, MARGARITKA, PELARGONIUM, VIOLA, WICKER_ROSES, TEA_HYBRID_ROSES, SMALL_FLOWERED_ROSES, ALL } = listOfGoodsConstants;
 
 const updateMenuAll = node => (dispatch, getState) => {
   const {
@@ -21,28 +24,25 @@ const updateMenuAll = node => (dispatch, getState) => {
 };
 
 const updateFilteredListOfGoodsActionCreator = payload => ({
-  type: catalogActionTypes.updateFilterdListOfGoods,
+  type: catalogActionTypes.updateFilteredListOfGoods,
   payload,
 });
 
-export const updateFilteredListOfGoods = node => (dispatch, getState) => {
-  const {
-    catalog: {
-      listOfGoods: { roses, margos, viola, pelargonia, kaltselyaria, currants },
-    },
-  } = getState();
+export const updateFilteredListOfGoods = (node, name) => (dispatch, getState) => {
+  const { catalog: { listOfGoods } } = getState();
+  const plantName = node && node.text || name;
 
-  if (typeof node.collapsed === 'boolean') {
+  if (node && typeof node.collapsed === 'boolean') {
     return dispatch(updateMenuAll(node));
   }
 
-  dispatch(generalActions.toggleDrawer(false));
+  node && dispatch(generalActions.toggleDrawer(false));
 
   let filteredListOfGoods = [];
-  switch (node.text) {
-    case 'Чайно гібридні':
+  switch (plantName) {
+    case TEA_HYBRID_ROSES:
       dispatch(generalActions.updateTitle({
-          title: 'Чайно гібридні троянди',
+          title: TEA_HYBRID_ROSES,
           prices: {
             ['1-50 шт.']: '35 грн',
             ['Більше 50 шт.']: '30 грн',
@@ -51,11 +51,11 @@ export const updateFilteredListOfGoods = node => (dispatch, getState) => {
         },
       ));
       dispatch(generalActions.updateGridType('cards'));
-      filteredListOfGoods = [...roses].filter(el => el.type === node.text);
+      filteredListOfGoods = [...listOfGoods[`${ROSES}`]].filter(el => el.type === plantName);
       break;
-    case 'Дрібноквіткові':
+    case SMALL_FLOWERED_ROSES:
       dispatch(generalActions.updateTitle({
-        title: 'Дрібноквіткові троянди',
+        title: SMALL_FLOWERED_ROSES,
         prices: {
           ['1-50 шт.']: '35 грн',
           ['Більше 50 шт.']: '30 грн',
@@ -63,11 +63,11 @@ export const updateFilteredListOfGoods = node => (dispatch, getState) => {
         },
       }));
       dispatch(generalActions.updateGridType('cards'));
-      filteredListOfGoods = [...roses].filter(el => el.type === node.text);
+      filteredListOfGoods = [...listOfGoods[`${ROSES}`]].filter(el => el.type === plantName);
       break;
-    case 'Плетисті':
+    case WICKER_ROSES:
       dispatch(generalActions.updateTitle({
-        title: 'Плетисті троянди',
+        title: WICKER_ROSES,
         prices: {
           ['1-50 шт.']: '40 грн',
           ['Більше 50 шт.']: '35 грн',
@@ -75,28 +75,28 @@ export const updateFilteredListOfGoods = node => (dispatch, getState) => {
         },
       }));
       dispatch(generalActions.updateGridType('cards'));
-      filteredListOfGoods = [...roses].filter(el => el.type === node.text);
+      filteredListOfGoods = [...listOfGoods[`${ROSES}`]].filter(el => el.type === plantName);
       break;
-    case 'Всі':
+    case ALL:
       dispatch(generalActions.updateTitle({
-        title: 'Троянди',
+        title: ROSES,
         prices: null,
       }));
       dispatch(generalActions.updateGridType('cards'));
-      filteredListOfGoods = [...roses];
+      filteredListOfGoods = [...listOfGoods[`${ROSES}`]];
       break;
-    case 'Маргаритки':
+    case MARGARITKA:
       dispatch(generalActions.updateTitle({
-        title: 'Маргаритки',
+        title: MARGARITKA,
         prices: {
           ['1-50 шт.']: '15 грн',
           ['більше 50 шт.']: '12 грн',
         },
       }));
       dispatch(generalActions.updateGridType('gallery'));
-      filteredListOfGoods = [...margos];
+      filteredListOfGoods = [...listOfGoods[`${MARGARITKA}`]];
       break;
-    case 'Віола (Анютки)':
+    case VIOLA:
       dispatch(generalActions.updateTitle({
         title: 'Віола (Анютки)',
         prices: {
@@ -105,44 +105,44 @@ export const updateFilteredListOfGoods = node => (dispatch, getState) => {
         },
       }));
       dispatch(generalActions.updateGridType('gallery'));
-      filteredListOfGoods = [...viola];
+      filteredListOfGoods = [...listOfGoods[`${VIOLA}`]];
       break;
-    case 'Пеларгонія':
+    case PELARGONIUM:
       dispatch(generalActions.updateTitle({
-        title: 'Пеларгонія',
+        title: PELARGONIUM,
         prices: {
           ['Ринка 12см в діаметрі']: '70 грн',
           ['Кашпо 23см в діаметрі']: '120 грн',
         },
       }));
       dispatch(generalActions.updateGridType('gallery'));
-      filteredListOfGoods = [...pelargonia];
+      filteredListOfGoods = [...listOfGoods[`${PELARGONIUM}`]];
       break;
-    case 'Кальцеолярія':
+    case CALCEOLARIA:
       dispatch(generalActions.updateTitle({
-        title: 'Кальцеолярія',
+        title: CALCEOLARIA,
         prices: {
           ['1-50 шт.']: '25 грн',
           ['більше 50 шт.']: '20 грн',
         },
       }));
       dispatch(generalActions.updateGridType('gallery'));
-      filteredListOfGoods = [...kaltselyaria];
+      filteredListOfGoods = [...listOfGoods[`${CALCEOLARIA}`]];
       break;
-    case 'Смородина':
+    case CURRANT:
       dispatch(generalActions.updateTitle({
-        title: 'Смородина',
+        title: CURRANT,
         prices: {
           ['1-100 шт.']: '20 грн',
           ['більше 100']: '15 грн',
         },
       }));
       dispatch(generalActions.updateGridType('gallery'));
-      filteredListOfGoods = [...currants];
+      filteredListOfGoods = [...listOfGoods[`${CURRANT}`]];
       break;
     default:
       dispatch(generalActions.updateTitle({ title: 'Квіти', price: null }));
-      filteredListOfGoods = [...roses];
+      filteredListOfGoods = [...listOfGoods[`${ROSES}`]];
   }
   return dispatch(updateFilteredListOfGoodsActionCreator(filteredListOfGoods));
 };

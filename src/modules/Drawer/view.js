@@ -16,24 +16,23 @@ import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 export const View = ({
-  toggleDrawer,
-  isOpenDrawer,
-  updateFilteredListOfGoods,
-  menu,
-  updateTitle,
-  history,
-  title: {title},
-  classes,
-}) => {
-  const hendleredirectToContacts = () => {
+                       toggleDrawer,
+                       isOpenDrawer,
+                       updateFilteredListOfGoods,
+                       menu,
+                       updateTitle,
+                       history,
+                       classes,
+                     }) => {
+  const handleRedirectToContacts = () => {
     toggleDrawer(false);
     updateTitle('Контакти');
-    history.push('/contacts');
+    history.push('/Contacts');
   };
 
   const handleUpdateFilteredListOfGoods = node => () => {
     updateFilteredListOfGoods(node);
-    history.push(`/catalog/${title}`);
+    history.push(`/catalog/${node.text}`);
   };
 
   return (
@@ -48,10 +47,10 @@ export const View = ({
       <div className={classes.drawerHeader}>
         <Typography className={classes.closeDrawerTitle}>Катлог</Typography>
         <IconButton onClick={() => toggleDrawer(false)}>
-          <ChevronLeftIcon className={classes.closeDrawerIcon} />
+          <ChevronLeftIcon className={classes.closeDrawerIcon}/>
         </IconButton>
       </div>
-      <Divider />
+      <Divider/>
       <List>
         {menu.heads.map(nodeId => {
           const node = menu.all[nodeId];
@@ -65,15 +64,15 @@ export const View = ({
                 {typeof node.collapsed === 'boolean' ? (
                   node.collapsed ? (
                     <div className={classes.collapseContainer}>
-                      <ExpandMoreIcon />
+                      <ExpandMoreIcon/>
                     </div>
                   ) : (
                     <div className={classes.collapseContainer}>
-                      <ExpandLessIcon />
+                      <ExpandLessIcon/>
                     </div>
                   )
                 ) : (
-                  <div className={classes.collapseContainer} />
+                  <div className={classes.collapseContainer}/>
                 )}
                 <Typography>{node.text}</Typography>
               </ListItem>
@@ -92,7 +91,7 @@ export const View = ({
                   </ListItem>
                 </Collapse>
               ))}
-              <Divider />
+              <Divider/>
             </div>
           );
         })}
@@ -101,7 +100,7 @@ export const View = ({
         className={classes.contactsBtn}
         variant="contained"
         color="primary"
-        onClick={hendleredirectToContacts}
+        onClick={handleRedirectToContacts}
       >
         <Link to="/contacts" className={classes.contactLink}>
           Контакти
