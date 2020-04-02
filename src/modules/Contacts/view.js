@@ -16,6 +16,7 @@ import ViberIcon from './assets/viberIcon.svg';
 import TelegramIcon from './assets/telegramIcon.svg';
 
 export const View = ({ classes }) => {
+
   const phones = [
     { name: 'Віктор', phone: '+380976911146' },
     { name: 'Тетяна', phone: '+380976911148' },
@@ -30,6 +31,17 @@ export const View = ({ classes }) => {
     fb: {
       link: 'https://www.facebook.com/100026793572185/',
       content: ['Напишіть нам у Facebook', <img className={classes.icon} src={FacebookIcon} alt="phone"/>],
+    },
+  };
+
+  const deliveryInfo = {
+    address: {
+      title: "Наша адреса:",
+      info: ['Вінницька обл.', 'Калинівський р-н.', 'c. Павлівка', 'вул. Коцюбинського, 18'],
+    },
+    delivery: {
+      title: "Доставка:",
+      info: ['Самовивіз', 'Новою Поштою (замовлення від 500грн)'],
     },
   };
 
@@ -79,26 +91,14 @@ export const View = ({ classes }) => {
       </Table>
       <Table className={classes.table}>
         <TableBody>
-          <TableRow>
-            <TableCell className={classes.td} colSpan={1}>
-              Наша адреса:
-            </TableCell>
-            <TableCell className={classes.td} colSpan={2}>
-              <Typography className={classes.text} color="primary">Вінницька обл.</Typography>
-              <Typography className={classes.text} color="primary">Калинівський р-н.</Typography>
-              <Typography className={classes.text} color="primary">c. Павлівка</Typography>
-              <Typography className={classes.text} color="primary">вул. Коцюбинського, 18</Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.td} colSpan={1}>
-              Доставка:
-            </TableCell>
-            <TableCell className={classes.td} colSpan={2}>
-              <Typography className={classes.text} color="primary">Самовивіз</Typography>
-              <Typography className={classes.text} color="primary">Новою Поштою (замовлення від 500грн)</Typography>
-            </TableCell>
-          </TableRow>
+          {Object.values(deliveryInfo).map(({ title, info }) => (
+            <TableRow>
+              <TableCell className={classes.td} colSpan={1}>{title}</TableCell>
+              <TableCell className={classes.td} colSpan={2}>
+                {info.map(el => <Typography className={classes.text} color="primary">{el}</Typography>)}
+              </TableCell>
+            </TableRow>
+          ))}
         </TableBody>
       </Table>
     </div>
