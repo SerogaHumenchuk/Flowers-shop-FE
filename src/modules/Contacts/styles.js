@@ -23,6 +23,8 @@ export const styles = createStyles({
   },
   link: {
     textDecoration: 'none',
+    color: '#3F51B5',
+    fontWeight: 700,
   },
   writeUsMessage: {
     fontSize: 14,
