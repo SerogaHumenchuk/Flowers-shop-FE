@@ -6,10 +6,8 @@ import { Table, TableRow, TableCell } from '@material-ui/core';
 export const View = ({ updateFilteredListOfGoods, gridType, prices, history: { location: { pathname } }, classes }) => {
 
   useEffect(() => {
-    const regex = /(?<=catalog\/).+/;
-    const plant = pathname.match(regex);
-
-    plant && updateFilteredListOfGoods(null, plant[0])
+    const plantNameFromUrl = pathname.slice(9);
+    plantNameFromUrl && updateFilteredListOfGoods(null, plantNameFromUrl);
   }, []);
 
   return (

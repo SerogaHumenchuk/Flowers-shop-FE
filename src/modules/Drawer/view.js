@@ -35,6 +35,16 @@ export const View = ({
     history.push(`/catalog/${node.text}`);
   };
 
+  const renderExpandIcon = node => {
+    if (typeof node.collapsed !== 'boolean') {
+      return <div className={classes.collapseContainer}/>;
+    }
+    if (node.collapsed) {
+      return <div className={classes.collapseContainer}><ExpandMoreIcon/></div>;
+    }
+    return <div className={classes.collapseContainer}><ExpandLessIcon/></div>;
+  };
+
   return (
     <Drawer
       className={classes.drawer}
@@ -45,7 +55,7 @@ export const View = ({
       }}
     >
       <div className={classes.drawerHeader}>
-        <Typography className={classes.closeDrawerTitle}>Катлог</Typography>
+        <Typography className={classes.closeDrawerTitle}>Каталог</Typography>
         <IconButton onClick={() => toggleDrawer(false)}>
           <ChevronLeftIcon className={classes.closeDrawerIcon}/>
         </IconButton>
@@ -61,19 +71,7 @@ export const View = ({
                 className={classes.item}
                 onClick={handleUpdateFilteredListOfGoods(node)}
               >
-                {typeof node.collapsed === 'boolean' ? (
-                  node.collapsed ? (
-                    <div className={classes.collapseContainer}>
-                      <ExpandMoreIcon/>
-                    </div>
-                  ) : (
-                    <div className={classes.collapseContainer}>
-                      <ExpandLessIcon/>
-                    </div>
-                  )
-                ) : (
-                  <div className={classes.collapseContainer}/>
-                )}
+                {renderExpandIcon(node)}
                 <Typography>{node.text}</Typography>
               </ListItem>
               {node.children.map(childId => (

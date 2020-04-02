@@ -20,6 +20,19 @@ export const View = ({ classes }) => {
     { name: 'Віктор', phone: '+380976911146' },
     { name: 'Тетяна', phone: '+380976911148' },
   ];
+  const contactsByPhoneNumberIcons = [PhoneIcon, TelegramIcon, ViberIcon];
+
+  const socialNetworksInfo = {
+    insta: {
+      link: 'https://www.instagram.com/flowersmamka/',
+      content: ['Напишіть нам у Instagram', <img className={classes.icon} src={InstaIcon} alt="phone"/>],
+    },
+    fb: {
+      link: 'https://www.facebook.com/100026793572185/',
+      content: ['Напишіть нам у Facebook', <img className={classes.icon} src={FacebookIcon} alt="phone"/>],
+    },
+  };
+
   return (
     <div>
       <Table className={classes.table}>
@@ -27,28 +40,23 @@ export const View = ({ classes }) => {
           {phones.map(person => (
             <TableRow className={classes.row}>
               <TableCell className={classes.td}>
-                <Typography
-                  className={classes.bold}
-                >{`${person.name}:`}</Typography>
+                <Typography className={classes.bold}>{`${person.name}:`}</Typography>
               </TableCell>
-
               <TableCell className={classes.td}>
-                <Typography color="primary" className={classes.bold}>
-                  {person.phone}
-                </Typography>
+                <Typography color="primary" className={classes.bold}>{person.phone}</Typography>
               </TableCell>
               <TableCell className={classes.td}>
                 <Grid container wrap="nowrap">
-                  <img className={classes.icon} src={PhoneIcon} alt="phone"/>
-                  <img className={classes.icon} src={TelegramIcon} alt="phone"/>
-                  <img className={classes.icon} src={ViberIcon} alt="phone"/>
+                  {contactsByPhoneNumberIcons.map(logo =>
+                    <img className={classes.icon} src={logo} alt="social-logo"/>,
+                  )}
                 </Grid>
               </TableCell>
             </TableRow>
           ))}
           <TableRow>
             <TableCell className={classes.td} colSpan={2}>
-              <Typography className={classes.mail} color="primary">
+              <Typography className={classes.text} color="primary">
                 viktor.humenchuk@gmail.com
               </Typography>
             </TableCell>
@@ -56,50 +64,17 @@ export const View = ({ classes }) => {
               <img className={classes.icon} src={GmailIcon} alt="phone"/>
             </TableCell>
           </TableRow>
-          <TableRow>
-            <TableCell className={classes.td} colSpan={2}>
-              <a
-                href="https://www.facebook.com/100026793572185"
-                target="_blank"
-                className={classes.link}
-              >
-                <Typography className={classes.writeUsMessage} color="primary">
-                  Напишіть нам у Facebook
-                </Typography>
-              </a>
-            </TableCell>
-            <TableCell className={classes.td} colSpan={2}>
-              <a
-                href="https://www.facebook.com/100026793572185"
-                target="_blank"
-                className={classes.link}
-              >
-                <img className={classes.icon} src={FacebookIcon} alt="phone"/>
-              </a>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.td} colSpan={2}>
-              <a
-                href="https://www.instagram.com/flowersmamka/"
-                target="_blank"
-                className={classes.link}
-              >
-                <Typography className={classes.writeUsMessage} color="primary">
-                  Напишіть нам у Instagram
-                </Typography>
-              </a>
-            </TableCell>
-            <TableCell className={classes.td} colSpan={2}>
-              <a
-                href="https://www.instagram.com/flowersmamka/"
-                target="_blank"
-                className={classes.link}
-              >
-                <img className={classes.icon} src={InstaIcon} alt="phone"/>
-              </a>
-            </TableCell>
-          </TableRow>
+          {Object.values(socialNetworksInfo).map(({ link, content }) => (
+            <TableRow>
+              {content.map(el => (
+                <TableCell className={classes.td} colSpan={2}>
+                  <a href={link} target="_blank" className={classes.link}>
+                    {el}
+                  </a>
+                </TableCell>
+              ))}
+            </TableRow>
+          ))}
         </TableBody>
       </Table>
       <Table className={classes.table}>
@@ -109,10 +84,10 @@ export const View = ({ classes }) => {
               Наша адреса:
             </TableCell>
             <TableCell className={classes.td} colSpan={2}>
-              <Typography className={classes.mail} color="primary">Вінницька обл.</Typography>
-              <Typography className={classes.mail} color="primary">Калинівський р-н.</Typography>
-              <Typography className={classes.mail} color="primary">c. Павлівка</Typography>
-              <Typography className={classes.mail} color="primary">вул. Коцюбинського, 18</Typography>
+              <Typography className={classes.text} color="primary">Вінницька обл.</Typography>
+              <Typography className={classes.text} color="primary">Калинівський р-н.</Typography>
+              <Typography className={classes.text} color="primary">c. Павлівка</Typography>
+              <Typography className={classes.text} color="primary">вул. Коцюбинського, 18</Typography>
             </TableCell>
           </TableRow>
           <TableRow>
@@ -120,8 +95,8 @@ export const View = ({ classes }) => {
               Доставка:
             </TableCell>
             <TableCell className={classes.td} colSpan={2}>
-              <Typography className={classes.mail} color="primary">Самовивіз</Typography>
-              <Typography className={classes.mail} color="primary">Новою Поштою (замовлення від 500грн)</Typography>
+              <Typography className={classes.text} color="primary">Самовивіз</Typography>
+              <Typography className={classes.text} color="primary">Новою Поштою (замовлення від 500грн)</Typography>
             </TableCell>
           </TableRow>
         </TableBody>
