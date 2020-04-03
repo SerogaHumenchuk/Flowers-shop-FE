@@ -2,7 +2,7 @@ import React from 'react';
 import { AppBar, Toolbar, Typography, Grid, Button } from '@material-ui/core';
 import KeyboardArrowLeftIcon from '@material-ui/icons/KeyboardArrowLeft';
 
-export const View = ({ toggleDrawer, isOpen, title: {price, title}, classes }) => (
+export const View = ({ toggleDrawer, isOpen, title, classes }) => (
   <div className={classes.headerContainer}>
     <AppBar position="fixed" color="primary">
       <Toolbar>

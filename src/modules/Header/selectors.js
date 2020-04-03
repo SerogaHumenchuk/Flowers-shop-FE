@@ -1,7 +1,7 @@
 import { createSelector } from 'reselect';
 
 export const selector = createSelector(
-  ({ general }) => general.title,
+  ({ catalog }) => catalog.listOfGoods.filtered.title,
   (title) => ({
     title,
   }),

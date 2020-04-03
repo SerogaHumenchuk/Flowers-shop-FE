@@ -6,6 +6,6 @@ import kaltselyaria5 from './kaltselyaria5.jpg';
 
 
 
-export const kaltselyaria = [
+export const caltselyariaImages = [
   kaltselyaria1, kaltselyaria3, kaltselyaria2, kaltselyaria4, kaltselyaria5,
 ]

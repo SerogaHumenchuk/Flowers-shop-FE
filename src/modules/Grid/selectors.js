@@ -1,9 +1,8 @@
 import { createSelector } from 'reselect';
 
 export const selector = createSelector(
-  ({ general }) => general.gridType,
-  ({ general }) => general.title.prices,
-  ({ catalog }) => catalog.listOfGoods,
+  ({ catalog }) => catalog.listOfGoods.filtered.gridType,
+  ({ catalog }) => catalog.listOfGoods.filtered.prices,
   (gridType, prices) => ({
     gridType,
     prices,
