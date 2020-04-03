@@ -5,4 +5,4 @@ import currant4 from './currant4.jpg';
 import currant5 from './currant5.jpg';
 import currant6 from './currant6.jpg';
 
-export const currants = [ currant5, currant3, currant4, currant7, currant1, currant6];
+export const currantsImages = [ currant5, currant3, currant4, currant7, currant1, currant6];

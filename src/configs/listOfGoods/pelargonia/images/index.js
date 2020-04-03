@@ -5,6 +5,6 @@ import pelargonia4 from './pelargonia4.jpg';
 import pelargonia5 from './pelargonia5.jpg';
 
 
-export const  pelargonia = [ 
+export const  pelargoniaImages = [
   pelargonia1, pelargonia2, pelargonia3, pelargonia4, pelargonia5,
 ]
