@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { GridList, GridListTile, Dialog, IconButton, AppBar } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
 
@@ -19,8 +19,12 @@ export const View = ({ filtered: { images }, classes }) => {
         {images.map(img => {
           cols++;
           return (
-            <GridListTile key={img} cols={cols % 3 === 0 ? 2 : 1} onClick={() => toggleDrawer({ isOpen: true, img })}
-                          className={classes.item}>
+            <GridListTile
+              key={img}
+              cols={cols % 3 === 0 ? 2 : 1}
+              onClick={() => toggleDrawer({ isOpen: true, img })}
+              className={classes.item}
+            >
               <img src={img} alt={`flower`}/>
             </GridListTile>
           );
