@@ -5,7 +5,7 @@ export const styles = createStyles({
     minHeight: '30vw',
   },
   closeBtn: {
-    margin: '0 0 0 auto'
+    margin: '0 0 0 auto',
   },
   header: {
     padding: '4px 10px',
@@ -20,11 +20,11 @@ export const styles = createStyles({
     marginTop: 56,
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   dialogImage: {
     display: 'block',
     width: '100%',
     height: 'auto',
-  }
+  },
 });
