@@ -8,9 +8,9 @@ import { Drawer } from '../modules/Drawer';
 const App = ({ classes }) => {
   return (
     <div className={classes.wrapper}>
-      <Header />
-      <Drawer />
-      <Routs />
+      <Header/>
+      <Drawer/>
+      <Routs/>
     </div>
   );
 };

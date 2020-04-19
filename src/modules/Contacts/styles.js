@@ -2,7 +2,7 @@ import { createStyles } from '@material-ui/core';
 
 export const styles = createStyles({
   table: {
-    marginBottom: 60
+    marginBottom: 60,
   },
   td: {
     padding: '1vw',

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { GridList, GridListTile, Dialog, IconButton, AppBar } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
 
