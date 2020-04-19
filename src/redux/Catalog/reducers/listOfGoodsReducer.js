@@ -35,6 +35,7 @@ export const listOfGoodsReducer = (
 ) => {
   switch (type) {
     case catalogActionTypes.updateFilteredListOfGoods:
+    case catalogActionTypes.handleShowMore:
       return {
         ...state,
         filtered: payload,

@@ -59,7 +59,7 @@ export const wickerRosesImages = [
 ];
 
 export const smallFloweredRosesImages = [
-  LadyRomantika, Alegria, Tornado, LadyRomantika, Alegria, YellowBabe, ArrowFollies, OrangeMorsdag, Goldjuwel, FireFlash, LoveliLydia, Bonica,
+  LadyRomantika, Alegria, Tornado, YellowBabe, ArrowFollies, OrangeMorsdag, Goldjuwel, FireFlash, LoveliLydia, Bonica,
 ];
 
 export const teaHybridRoses = [

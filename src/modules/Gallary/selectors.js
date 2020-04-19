@@ -1,7 +1,8 @@
 import { createSelector } from 'reselect';
+import { filteredListOfGoods } from '../../redux/Catalog/selectors';
 
 export const selector = createSelector(
-  ({ catalog }) => catalog.listOfGoods.filtered,
+  filteredListOfGoods,
   filtered => ({
     filtered,
   }),
