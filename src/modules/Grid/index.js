@@ -5,10 +5,11 @@ import { withRouter } from 'react-router-dom';
 import { compose } from 'redux';
 import { selector } from './selectors';
 import { styles } from './styles';
-import { updateFilteredListOfGoods } from '../../redux/Catalog/actions';
+import { updateFilteredListOfGoods, handleShowMore } from '../../redux/Catalog/actions';
 
 const mapDispatchToProps = {
   updateFilteredListOfGoods,
+  handleShowMore
 };
 
 export const Grid = compose(

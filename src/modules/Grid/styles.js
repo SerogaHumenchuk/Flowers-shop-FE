@@ -8,4 +8,12 @@ export const styles = createStyles({
   td: {
     padding: '1vh',
   },
+  showMoreBtn: {
+    margin: 'auto',
+  },
+  showMoreBtnContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    marginTop: 15,
+  },
 });
