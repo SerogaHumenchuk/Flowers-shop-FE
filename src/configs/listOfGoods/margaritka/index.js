@@ -11,4 +11,5 @@ export const margoConfig = {
   },
   gridType: 'gallery',
   images: margoImages,
+  pagination: 10,
 };

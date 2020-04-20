@@ -1,6 +1,10 @@
 import { createStyles } from '@material-ui/core';
 
 export const styles = createStyles({
+  container: {
+    width: '100vw',
+    padding: 5,
+  },
   table: {
     marginBottom: 60,
   },
@@ -31,4 +35,7 @@ export const styles = createStyles({
     fontWeight: 600,
     marginRight: 5,
   },
+  mapContainer: {
+    right: 0
+  }
 });

@@ -11,4 +11,5 @@ export const teaHybridRosesConfig = {
   },
   gridType: 'cards',
   images: teaHybridRoses,
+  pagination: 10,
 };

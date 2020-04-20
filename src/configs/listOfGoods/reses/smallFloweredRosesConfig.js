@@ -11,4 +11,5 @@ export const smallFloweredRosesConfig = {
   },
   gridType: 'cards',
   images: smallFloweredRosesImages,
+  pagination: 10,
 };
