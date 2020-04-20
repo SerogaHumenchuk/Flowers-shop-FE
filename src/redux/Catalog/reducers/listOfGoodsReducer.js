@@ -18,8 +18,8 @@ const { ROSES, TEA_HYBRID_ROSES, SMALL_FLOWERED_ROSES, WICKER_ROSES, CALCEOLARIA
 
 const initiaListOfGoods = {
   [`${ROSES}`]: allRosesConfig,
-  [`${TEA_HYBRID_ROSES}`]: smallFloweredRosesConfig,
-  [`${SMALL_FLOWERED_ROSES}`]: teaHybridRosesConfig,
+  [`${TEA_HYBRID_ROSES}`]: teaHybridRosesConfig,
+  [`${SMALL_FLOWERED_ROSES}`]: smallFloweredRosesConfig,
   [`${WICKER_ROSES}`]: wickerRosesConfig,
   [`${MARGARITKA}`]: margoConfig,
   [`${VIOLA}`]: vioalConfig,

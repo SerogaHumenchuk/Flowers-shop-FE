@@ -11,4 +11,5 @@ export const wickerRosesConfig = {
   },
   gridType: 'cards',
   images: wickerRosesImages,
+  pagination: 10,
 };

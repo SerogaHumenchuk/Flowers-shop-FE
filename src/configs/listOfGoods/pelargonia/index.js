@@ -11,5 +11,6 @@ export const pelargoniaConfig = {
   },
   gridType: 'gallery',
   images: pelargoniaImages,
+  pagination: 10,
 };
 

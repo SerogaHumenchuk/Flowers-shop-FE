@@ -7,4 +7,5 @@ export const allRosesConfig = {
   prices: null,
   gridType: 'cards',
   images: [...teaHybridRoses, ...wickerRosesImages, ...smallFloweredRosesImages],
+  pagination: 10,
 };

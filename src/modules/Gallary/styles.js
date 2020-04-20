@@ -1,8 +1,17 @@
 import { createStyles } from '@material-ui/core';
 
 export const styles = createStyles({
+  container: {
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'center'
+  },
+  list: {
+    maxWidth: 1200,
+    margin: 'auto'
+  },
   item: {
-    minHeight: '30vw',
+    minHeight: '25vw',
   },
   closeBtn: {
     margin: '0 0 0 auto',
@@ -16,11 +25,13 @@ export const styles = createStyles({
   },
   imageContainer: {
     width: '100%',
+    maxWidth: 1200,
     height: '100%',
     marginTop: 56,
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
+    margin: 'auto'
   },
   dialogImage: {
     display: 'block',

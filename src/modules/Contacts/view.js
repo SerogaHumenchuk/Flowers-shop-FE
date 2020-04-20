@@ -14,6 +14,7 @@ import InstaIcon from './assets/instaIcon.svg';
 import PhoneIcon from './assets/phoneIcon.svg';
 import ViberIcon from './assets/viberIcon.svg';
 import TelegramIcon from './assets/telegramIcon.svg';
+import { Map } from '../Map';
 
 export const View = ({ classes }) => {
   const phones = [
@@ -56,7 +57,7 @@ export const View = ({ classes }) => {
   };
 
   return (
-    <div>
+    <div className={classes.container}>
       <Table className={classes.table}>
         <TableBody>
           {phones.map((person) => (
@@ -125,6 +126,9 @@ export const View = ({ classes }) => {
           ))}
         </TableBody>
       </Table>
+      <div className={classes.mapContainer}>
+        <Map />
+      </div>
     </div>
   );
 };

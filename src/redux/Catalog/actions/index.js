@@ -25,10 +25,7 @@ export const updateFilteredListOfGoods = (node, name) => (dispatch, getState) =>
   if (plants) {
     dispatch({
       type: catalogActionTypes.updateFilteredListOfGoods,
-      payload: {
-        ...plants,
-        pagination: 10,
-      },
+      payload: plants
     });
   }
 };

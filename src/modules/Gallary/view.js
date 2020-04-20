@@ -14,8 +14,8 @@ export const View = ({ filtered: { images, pagination }, classes }) => {
   const [dialogImage, setDialogImage] = useState('');
   let cols = 0;
   return (
-    <div>
-      <GridList cellHeight={160} cols={2}>
+    <div className={classes.container}>
+      <GridList cellHeight={160} cols={2} className={classes.list}>
         {images.slice(0, pagination).map(img => {
           cols++;
           return (

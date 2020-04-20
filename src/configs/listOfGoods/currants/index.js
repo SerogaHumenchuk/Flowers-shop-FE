@@ -11,5 +11,6 @@ export const carrantConfig = {
   },
   gridType: 'gallery',
   images: currantsImages,
+  pagination: 10,
 };
 
