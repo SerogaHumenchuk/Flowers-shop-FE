@@ -1,18 +1,25 @@
 import React from 'react';
-import { Map } from 'google-maps-react';
+import { Map, Marker } from 'google-maps-react';
 
 export const View = ({ google }) => {
   const mapStyles = {
-    height: '100%',
-    margin: 0,
-    padding: 0
+    maxWidth: 200,
   };
   return (
     <Map
       google={google}
-      zoom={8}
+      zoom={14}
       style={mapStyles}
-      initialCenter={{ lat: 47.444, lng: 122.176 }}
-    />
+      initialCenter={{ lat: 49.452, lng: 28.487 }}
+    >
+      <Marker
+        title={'Садовий центр'}
+        name={'SOMA'}
+        position={{ lat: 49.4515, lng: 28.4715 }}
+        // icon={{
+        //   url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQA0cUQdXVZp2HtlwXo5WVQh9qYVROXhUA6eWVQ6MLoKNj4mWR2&usqp=CAU',
+        // }}
+      />
+    </Map>
   );
 };
