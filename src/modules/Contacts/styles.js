@@ -2,8 +2,8 @@ import { createStyles } from '@material-ui/core';
 
 export const styles = createStyles({
   container: {
-    width: '100vw',
-    padding: 5,
+    width: '90%',
+    padding: '1% 5%'
   },
   table: {
     marginBottom: 60,
@@ -36,6 +36,13 @@ export const styles = createStyles({
     marginRight: 5,
   },
   mapContainer: {
-    right: 0
+    display: 'flex',
+    justifyContent: 'center',
+    width: 200,
+    '& div': {
+      '&:first-child': {
+        maxWidth: '200px'
+      },
+    },
   }
 });
