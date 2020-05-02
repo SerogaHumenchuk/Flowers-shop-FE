@@ -28,14 +28,14 @@ export const View = ({ classes }) => {
       link: 'https://www.instagram.com/flowersmamka/',
       content: [
         'Напишіть нам у Instagram',
-        <img className={classes.icon} src={InstaIcon} alt="phone"/>,
+        <img className={classes.icon} src={InstaIcon} alt="phone" />,
       ],
     },
     fb: {
       link: 'https://www.facebook.com/100026793572185/',
       content: [
         'Напишіть нам у Facebook',
-        <img className={classes.icon} src={FacebookIcon} alt="phone"/>,
+        <img className={classes.icon} src={FacebookIcon} alt="phone" />,
       ],
     },
   };
@@ -92,7 +92,7 @@ export const View = ({ classes }) => {
               </Typography>
             </TableCell>
             <TableCell className={classes.td} colSpan={1}>
-              <img className={classes.icon} src={GmailIcon} alt="phone"/>
+              <img className={classes.icon} src={GmailIcon} alt="phone" />
             </TableCell>
           </TableRow>
           {Object.values(socialNetworksInfo).map(({ link, content }) => (

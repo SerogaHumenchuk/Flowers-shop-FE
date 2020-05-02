@@ -1,13 +1,5 @@
 import React from 'react';
-import {
-  Drawer,
-  ListItem,
-  Typography,
-  Divider,
-  List,
-  Collapse,
-  Button,
-} from '@material-ui/core';
+import { Drawer, ListItem, Typography, Divider, List, Collapse, Button } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 
 import IconButton from '@material-ui/core/IconButton';
@@ -16,33 +8,41 @@ import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 export const View = ({
-                       toggleDrawer,
-                       isOpenDrawer,
-                       updateFilteredListOfGoods,
-                       menu,
-                       updateTitle,
-                       history,
-                       classes,
-                     }) => {
+  toggleDrawer,
+  isOpenDrawer,
+  updateFilteredListOfGoods,
+  menu,
+  updateTitle,
+  history,
+  classes,
+}) => {
   const handleRedirectToContacts = () => {
     toggleDrawer(false);
     updateTitle('Контакти');
     history.push('/Contacts');
   };
 
-  const handleUpdateFilteredListOfGoods = node => () => {
+  const handleUpdateFilteredListOfGoods = (node) => () => {
     updateFilteredListOfGoods(node);
     history.push(`/catalog/${node.text}`);
   };
 
-  const renderExpandIcon = node => {
+  const renderExpandIcon = (node) => {
     if (typeof node.collapsed !== 'boolean') {
-      return <div className={classes.collapseContainer}/>;
+      return <div className={classes.collapseContainer} />;
     }
     if (node.collapsed) {
-      return <div className={classes.collapseContainer}><ExpandMoreIcon/></div>;
+      return (
+        <div className={classes.collapseContainer}>
+          <ExpandMoreIcon />
+        </div>
+      );
     }
-    return <div className={classes.collapseContainer}><ExpandLessIcon/></div>;
+    return (
+      <div className={classes.collapseContainer}>
+        <ExpandLessIcon />
+      </div>
+    );
   };
 
   return (
@@ -57,12 +57,12 @@ export const View = ({
       <div className={classes.drawerHeader}>
         <Typography className={classes.closeDrawerTitle}>Каталог</Typography>
         <IconButton onClick={() => toggleDrawer(false)}>
-          <ChevronLeftIcon className={classes.closeDrawerIcon}/>
+          <ChevronLeftIcon className={classes.closeDrawerIcon} />
         </IconButton>
       </div>
-      <Divider/>
+      <Divider />
       <List>
-        {menu.heads.map(nodeId => {
+        {menu.heads.map((nodeId) => {
           const node = menu.all[nodeId];
           return (
             <div key={nodeId}>
@@ -74,12 +74,8 @@ export const View = ({
                 {renderExpandIcon(node)}
                 <Typography>{node.text}</Typography>
               </ListItem>
-              {node.children.map(childId => (
-                <Collapse
-                  in={node.collapsed}
-                  className={classes.collapse}
-                  key={childId}
-                >
+              {node.children.map((childId) => (
+                <Collapse in={node.collapsed} className={classes.collapse} key={childId}>
                   <ListItem
                     button
                     className={`${classes.item} ${classes.subItem}`}
@@ -89,7 +85,7 @@ export const View = ({
                   </ListItem>
                 </Collapse>
               ))}
-              <Divider/>
+              <Divider />
             </div>
           );
         })}
