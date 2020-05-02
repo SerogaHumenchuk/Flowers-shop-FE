@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   Table,
-  TableBody,
   TableRow,
   TableCell,
   Grid,
@@ -15,8 +14,9 @@ import PhoneIcon from './assets/phoneIcon.svg';
 import ViberIcon from './assets/viberIcon.svg';
 import TelegramIcon from './assets/telegramIcon.svg';
 import { Map } from '../Map';
+import { container, mapContainer } from './styles';
 
-export const View = ({ classes }) => {
+export const View = ({ classes, width }) => {
   const phones = [
     { name: 'Віктор', phone: '+380976911146' },
     { name: 'Тетяна', phone: '+380976911148' },
@@ -40,95 +40,89 @@ export const View = ({ classes }) => {
     },
   };
 
+  const renderContactsTable = () =>
+    <Table className={classes.table}>
+      {phones.map((person) => (
+        <TableRow className={classes.row}>
+          <TableCell className={classes.td}>
+            <Typography className={classes.bold}>{`${person.name}:`}</Typography>
+          </TableCell>
+          <TableCell className={classes.td}>
+            <Typography color="primary" className={classes.bold}>
+              {person.phone}
+            </Typography>
+          </TableCell>
+          <TableCell className={classes.td}>
+            <Grid container justify='space-between' wrap="nowrap">
+              {contactsByPhoneNumberIcons.map((logo) =>
+                <img className={classes.icon} src={logo} alt="social-logo"/>,
+              )}
+            </Grid>
+          </TableCell>
+        </TableRow>
+      ))}
+      <TableRow>
+        <TableCell className={classes.td} colSpan={3}>
+          <Grid container wrap='nowrap' justify='space-between'>
+            <Typography className={classes.text} color="primary">
+              viktor.humenchuk@gmail.com
+            </Typography>
+            <img className={classes.icon} src={GmailIcon} alt="phone"/>
+          </Grid>
+        </TableCell>
+      </TableRow>
+      {Object.values(socialNetworksInfo).map(({ link, content }) => (
+        <TableRow>
+          {content.map((el) =>
+            <TableCell className={classes.td} colSpan={2}>
+              <a href={link} target="_blank" className={classes.link}>
+                {el}
+              </a>
+            </TableCell>,
+          )}
+        </TableRow>
+      ))}
+    </Table>;
+
   const deliveryInfo = {
     address: {
       title: 'Наша адреса:',
       info: [
-        'Вінницька обл.',
-        'Калинівський р-н.',
-        'c. Павлівка',
-        'вул. Коцюбинського, 18',
+        'Вінницька обл., Калинівський р-н.',
+        'c. Павлівка, вул. Коцюбинського, 18',
       ],
     },
     delivery: {
       title: 'Доставка:',
-      info: ['Самовивіз', 'Новою Поштою (замовлення від 500грн)'],
+      info: ['Самовивіз,', 'Новою Поштою (замовлення від 1000грн)'],
     },
   };
 
-  return (
-    <div className={classes.container}>
-      <Table className={classes.table}>
-        <TableBody>
-          {phones.map((person) => (
-            <TableRow className={classes.row}>
-              <TableCell className={classes.td}>
-                <Typography
-                  className={classes.bold}
-                >{`${person.name}:`}</Typography>
-              </TableCell>
-              <TableCell className={classes.td}>
-                <Typography color="primary" className={classes.bold}>
-                  {person.phone}
-                </Typography>
-              </TableCell>
-              <TableCell className={classes.td}>
-                <Grid container wrap="nowrap">
-                  {contactsByPhoneNumberIcons.map((logo) => (
-                    <img
-                      className={classes.icon}
-                      src={logo}
-                      alt="social-logo"
-                    />
-                  ))}
-                </Grid>
-              </TableCell>
-            </TableRow>
-          ))}
-          <TableRow>
-            <TableCell className={classes.td} colSpan={2}>
+  const renderAddressTable = () => (
+    <Table className={classes.table}>
+      {Object.values(deliveryInfo).map(({ title, info }) =>
+        <TableRow>
+          <TableCell className={classes.td} colSpan={2}>{title}</TableCell>
+          <TableCell className={classes.td} colSpan={3}>
+            {info.map((el) =>
               <Typography className={classes.text} color="primary">
-                viktor.humenchuk@gmail.com
-              </Typography>
-            </TableCell>
-            <TableCell className={classes.td} colSpan={1}>
-              <img className={classes.icon} src={GmailIcon} alt="phone"/>
-            </TableCell>
-          </TableRow>
-          {Object.values(socialNetworksInfo).map(({ link, content }) => (
-            <TableRow>
-              {content.map((el) => (
-                <TableCell className={classes.td} colSpan={2}>
-                  <a href={link} target="_blank" className={classes.link}>
-                    {el}
-                  </a>
-                </TableCell>
-              ))}
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-      <Table className={classes.table}>
-        <TableBody>
-          {Object.values(deliveryInfo).map(({ title, info }) => (
-            <TableRow>
-              <TableCell className={classes.td} colSpan={1}>
-                {title}
-              </TableCell>
-              <TableCell className={classes.td} colSpan={2}>
-                {info.map((el) => (
-                  <Typography className={classes.text} color="primary">
-                    {el}
-                  </Typography>
-                ))}
-              </TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-      <div className={classes.mapContainer}>
-        <Map />
+                {el}
+              </Typography>,
+            )}
+          </TableCell>
+        </TableRow>,
+      )}
+    </Table>
+  );
+  return (
+    <Grid className={`${classes[container[width]]} ${classes.container}`}>
+      <div>
+        {renderContactsTable()}
+        {renderAddressTable()}
       </div>
-    </div>
+      <div  className={classes[mapContainer[width]]}>
+        <Map/>
+      </div>
+    </Grid>
   );
 };
