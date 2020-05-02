@@ -1,12 +1,84 @@
 import { createStyles } from '@material-ui/core';
 
+export const container = {
+  xs: 'tablesContainer_small',
+  sm: 'tablesContainer_small',
+  md: 'tablesContainer_large',
+  lg: 'tablesContainer_large',
+  xl: 'tablesContainer_large',
+};
+
+const containerStyles = {
+  container: {
+    margin: '20px 0',
+  },
+  tablesContainer_large: {
+    display: 'flex',
+    justifyContent: 'space-between',
+  },
+};
+
+export const mapContainer = {
+  xs: 'mapContainer_small',
+  sm: 'mapContainer_small',
+  md: 'mapContainer_md',
+  lg: 'mapContainer_lg',
+  xl: 'mapContainer_xl',
+};
+
+const mapContainerStyles = {
+  mapContainer_small: {
+    display: 'flex',
+    justifyContent: 'center',
+    '& div': {
+      '&:first-child': {
+        left: '5vw',
+        maxWidth: '90vw',
+      },
+    },
+  },
+  mapContainer_md: {
+    display: 'flex',
+    justifyContent: 'center',
+    '& div': {
+      '&:first-child': {
+        right: 10,
+        maxWidth: '50vw',
+        maxHeight: '90vh',
+      },
+    },
+  },
+  mapContainer_lg: {
+    display: 'flex',
+    justifyContent: 'center',
+    '& div': {
+      '&:first-child': {
+        right: 10,
+        maxWidth: '60vw',
+        maxHeight: '90vh',
+      },
+    },
+  },
+  mapContainer_xl: {
+    display: 'flex',
+    justifyContent: 'center',
+    '& div': {
+      '&:first-child': {
+        right: 10,
+        maxWidth: '70vw',
+        maxHeight: '90vh',
+      },
+    },
+  },
+};
+
 export const styles = createStyles({
   container: {
     width: '90%',
-    padding: '1% 5%'
+    margin: 'auto',
   },
   table: {
-    marginBottom: 60,
+    marginBottom: 20,
   },
   td: {
     padding: '1vw',
@@ -28,21 +100,13 @@ export const styles = createStyles({
   link: {
     textDecoration: 'none',
     color: '#3F51B5',
-    fontWeight: 700,
+    fontWeight: 500,
   },
   writeUsMessage: {
     fontSize: 14,
     fontWeight: 600,
     marginRight: 5,
   },
-  mapContainer: {
-    display: 'flex',
-    justifyContent: 'center',
-    width: 200,
-    '& div': {
-      '&:first-child': {
-        maxWidth: '200px'
-      },
-    },
-  }
+  ...containerStyles,
+  ...mapContainerStyles,
 });
