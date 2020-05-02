@@ -5,8 +5,8 @@ export const View = ({ google }) => {
   return (
     <Map
       google={google}
-      zoom={14}
-      initialCenter={{ lat: 49.452, lng: 28.487 }}
+      zoom={12}
+      initialCenter={{ lat: 49.456, lng: 28.487 }}
     >
       <Marker
         title={'Садовий центр'}
