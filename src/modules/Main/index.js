@@ -7,12 +7,9 @@ import { selector } from './selectors';
 import { styles } from './styles';
 
 import { updateFilteredListOfGoods } from '../../redux/Catalog/actions';
-import { toggleDrawer, updateTitle } from '../../redux/General/actions';
 
 const mapDispatchToProps = {
   updateFilteredListOfGoods,
-  toggleDrawer,
-  updateTitle,
 };
 
 export const Main = compose(
