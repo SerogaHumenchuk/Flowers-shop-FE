@@ -6,5 +6,3 @@ export const selector = createSelector(
     title,
   }),
 );
-
-

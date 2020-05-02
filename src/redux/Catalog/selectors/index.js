@@ -1,1 +1,2 @@
-export const filteredListOfGoods = ({ catalog }) => catalog.listOfGoods.filtered;
+export const filteredListOfGoods = ({ catalog }) =>
+  catalog.listOfGoods.filtered;
