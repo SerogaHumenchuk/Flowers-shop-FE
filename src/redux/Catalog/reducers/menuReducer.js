@@ -1,13 +1,17 @@
 import { catalogActionTypes } from '../ActionTypes';
-import { menu } from '../../../configs/menu';
 
 const initialMenu = {
-  all: { ...menu },
-  heads: [1, 7, 8, 9, 10, 11],
+  all: {},
+  heads: [],
+  status: -1,
 };
 
 export const menuReducer = (state = initialMenu, { type, payload }) => {
   switch (type) {
+    case catalogActionTypes.fetchCatalog:
+      return {
+        ...payload,
+      };
     case catalogActionTypes.updateMenuAll:
       return {
         ...state,
