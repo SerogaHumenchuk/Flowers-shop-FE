@@ -1,7 +1,7 @@
 import { generalActionTypes } from '../actionTypes';
 
 const initialState = {
-  isOpenDrawer: true,
+  isOpenDrawer: false,
 };
 
 export const generalReducer = (state = initialState, { type, payload }) => {

@@ -8,14 +8,15 @@ export const styles = createStyles({
     listStyle: 'none',
     display: 'flex',
     flexWrap: 'wrap',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
     alignItems: 'flex-start',
   },
   item: {
     cursor: 'pointer',
     position: 'relative',
-    marginBottom: '10px',
-    maxWidth: 320,
+    margin: '10px',
+    width: '40vw',
+    maxWidth: 250,
     height: 'auto',
     '&:hover': {
       boxShadow: '0 0 10px rgba(0,0,0,0.5)',
@@ -33,8 +34,10 @@ export const styles = createStyles({
   },
 
   text: {
+    width: '100%',
+    textAlign: 'center',
     color: '#fff',
-    fontSize: '34px',
+    fontSize: '22px',
     position: 'absolute',
     top: '50%',
     left: '50%',

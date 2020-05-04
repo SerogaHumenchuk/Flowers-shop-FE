@@ -2,30 +2,25 @@ import { catalogActionTypes } from '../ActionTypes';
 import * as generalActions from '../../General/actions';
 import { listOfGoodsConstants } from '../../../constants/listOfGoods';
 import { filteredListOfGoods } from '../selectors';
+import { fetcher, catalogURl } from '../../../API';
 
 const { ALL, ROSES } = listOfGoodsConstants;
 
 export const updateFilteredListOfGoods = (node, name) => (dispatch, getState) => {
-  const { catalog: { listOfGoods, menu: { all } } } = getState();
+  const { catalog: { listOfGoods } } = getState();
   let plantName = node && node.text || name;
-  if (plantName === ALL) plantName = ROSES;
 
-  if (node && typeof node.collapsed === 'boolean') {
-    return dispatch({
-      type: catalogActionTypes.updateMenuAll,
-      payload: {
-        ...all,
-        [node.nodeId]: { ...node, collapsed: !node.collapsed },
-      },
-    });
+  if (plantName === ALL) {
+    plantName = ROSES;
   }
 
   dispatch(generalActions.toggleDrawer(false));
+
   const plants = listOfGoods[plantName];
   if (plants) {
     dispatch({
       type: catalogActionTypes.updateFilteredListOfGoods,
-      payload: plants
+      payload: plants,
     });
   }
 };
@@ -37,7 +32,15 @@ export const handleShowMore = () => (dispatch, getState) => {
     type: catalogActionTypes.handleShowMore,
     payload: {
       ...filtered,
-      pagination: filtered.pagination += 10
-    }
-  })
-}
+      pagination: filtered.pagination += 10,
+    },
+  });
+};
+
+export const fetchCatalog = () => async dispatch => {
+  const payload = await fetcher(catalogURl);
+  dispatch({
+    type: catalogActionTypes.fetchCatalog,
+    payload,
+  });
+};
