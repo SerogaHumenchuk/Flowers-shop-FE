@@ -1,0 +1,23 @@
+{
+  "title": "Маргаритки",
+  "prices": {
+    "1-50 шт.": "15 грн",
+    "більше 50 шт.": "12 грн"
+  },
+  "gridType": "gallery",
+  "images": [
+    "/static/media/margo1.b5625de7.jpg",
+    "/static/media/margo14.20c089dd.jpg",
+    "/static/media/margo6.f6b2c36f.jpg",
+    "/static/media/margo12.7ad5724a.jpg",
+    "/static/media/margo10.add0e874.jpg",
+    "/static/media/margo2.eafb2a61.jpg",
+    "/static/media/margo13.3ccd6f21.jpg",
+    "/static/media/margo3.71e93b74.jpg",
+    "/static/media/margo4.0a03d9d0.jpg",
+    "/static/media/margo15.5bc31de7.jpg",
+    "/static/media/margo11.cf5ee05e.jpg",
+    "/static/media/margo5.b602de3b.jpg"
+  ],
+  "pagination": 10
+}

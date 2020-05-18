@@ -1,28 +1,14 @@
 import { catalogActionTypes } from '../ActionTypes';
 import * as generalActions from '../../General/actions';
-import { listOfGoodsConstants } from '../../../constants/listOfGoods';
 import { filteredListOfGoods } from '../selectors';
 import { fetcher, catalogURl } from '../../../API';
 
-const { ALL, ROSES } = listOfGoodsConstants;
-
-export const updateFilteredListOfGoods = (node, name) => (dispatch, getState) => {
-  const { catalog: { listOfGoods } } = getState();
-  let plantName = node && node.text || name;
-
-  if (plantName === ALL) {
-    plantName = ROSES;
-  }
-
+export const updateFilteredListOfGoods = payload => dispatch => {
   dispatch(generalActions.toggleDrawer(false));
-
-  const plants = listOfGoods[plantName];
-  if (plants) {
-    dispatch({
-      type: catalogActionTypes.updateFilteredListOfGoods,
-      payload: plants,
-    });
-  }
+  dispatch({
+    type: catalogActionTypes.updateFilteredListOfGoods,
+    payload,
+  });
 };
 
 export const handleShowMore = () => (dispatch, getState) => {

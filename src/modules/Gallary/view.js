@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { GridList, GridListTile, Dialog, IconButton, AppBar } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
 
-export const View = ({ filtered: { images, pagination }, classes }) => {
-
+export const View = ({ filtered, filtered: { images, pagination }, classes }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDrawer = ({ isOpen, img = '' }) => () => {

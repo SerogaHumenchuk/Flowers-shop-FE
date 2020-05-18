@@ -1,17 +1,17 @@
 import React from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import { Contacts } from '../modules/Contacts';
 import { Grid } from '../modules/Grid';
-import { Main } from '../modules/Main/index';
+import { Catalog } from '../modules/Catalog';
 
 export const Routs = () => {
   return (
     <Switch>
-      <Route path="/catalog" exact component={Main} />
-      <Route path="/contacts" component={Contacts} />
-      <Route path="/catalog/:id" component={Grid} />
+      <Route path="/catalog" exact component={Catalog}/>
+      <Route path="/contacts" component={Contacts}/>
+      <Route path="/catalog/:id" component={Grid}/>
       {/* <Route path="/" component={Grid} /> */}
-      {/* <Redirect to="/" /> */}
+      <Route to="/"/>
     </Switch>
   );
 };
