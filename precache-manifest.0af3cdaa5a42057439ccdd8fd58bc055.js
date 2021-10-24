@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f98aa11f7748c44e9e196039024f9a87",
+    "revision": "35f899647e0c7f7ad1d42a6895dce294",
     "url": "/Flowers-shop-FE/index.html"
   },
   {
